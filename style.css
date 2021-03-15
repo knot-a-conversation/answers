@@ -1,0 +1,65 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#dblist {
+  width: 65%; /* Full width (cover the whole page) */
+  height: 100%;
+ 
+  margin: 2em;
+ 
+}
+#dblist > h2{
+  font-family: "Rajdhani", sans-serif;
+  font-size: 30px;
+  border-bottom: 2px solid #34dede;
+}
+
+h3{
+  font-family: 'Rajdhani';
+  font-size: 22px;
+  color: #525252;
+  margin-top:2em
+}
+
+#dblist > span{
+  font-family: 'Roboto',sans-serif;
+  font-size: 17px;
+}
+
+.qna{
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+
+}
+
+.db{
+  font-family: 'Roboto',sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.dba{
+  font-family: 'Roboto',sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  
+}
+
+ .set-order{
+ 
+  border-bottom: 1px dotted #6abdbd;
+  padding-bottom: 1.5em;
+} 
+
+
+#reverse-order{
+  width: 65%; /* Full width (cover the whole page) */
+  height: 100%;
+  margin-top: -2em;
+  margin-left: 2em;
+  display: flex;
+  flex-direction: column-reverse;
+}
