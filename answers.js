@@ -19,8 +19,12 @@ async function GPTAnswer(){
       var data = snapshot.val();
       let keys = Object.keys(data)
        answerGPT = data.name;
-        console.log(answerGPT)
+        
        questionprompt = data.question;
+       if(data.startedAt){
+
+         console.log(data.startedAt, new Date(data.startedAt*1000))
+       }
        spl = answerGPT.split(". ");
           if(spl.length > 1){
             spl.pop();
@@ -31,7 +35,7 @@ async function GPTAnswer(){
             finalAns = answerGPT;
           }
           
-       console.log(finalAns)
+      //  console.log(finalAns)
           // console.log("new key should be: " + data.key)
           // console.log("Previous Post ID: " + prevChildKey);
           const ques = createP("Question: ").addClass("qna");
@@ -40,14 +44,33 @@ async function GPTAnswer(){
           const answers = createP("Answer: ").addClass("qna");
           var li_a = createP(finalAns).addClass("dba");  
 
-        set = createDiv().addClass("set-order")
-        q_set = ques.parent(set);
-        q_set2 =  li_q.parent(set);
-        a_set= answers.parent(set);
-        a_set2=  li_a.parent(set);
+          if(data.startedAt){
+            timestamp = data.startedAt
+            GPTdate = new Date(timestamp)
+            var year = GPTdate.getFullYear();
+            var month = GPTdate.getMonth() + 1;
+            var day = GPTdate.getDate();
+            var hours = GPTdate.getHours();
+            var minutes = GPTdate.getMinutes();
 
+            formattedDate = year + "-" + month + "-" + day + " " + hours + ":" + minutes;
+            //var date = new Date(timestamp * 1000);
+            // formattedDate = addDate.getFullYear()
+            const dateAnswered = createP("Date answered: ").addClass("qna-date");
+            var li_date = createP(formattedDate).addClass("dbdate")
+            date_set = dateAnswered.parent(setDiv) 
+            date_set2 = li_date.parent(setDiv) 
+          }
+;  
+
+        setDiv = createDiv().addClass("set-order")
+        q_set = ques.parent(setDiv);
+        q_set2 =  li_q.parent(setDiv);
+        a_set= answers.parent(setDiv);
+        a_set2=  li_a.parent(setDiv);
+          
         // reverseSet = createDiv().addId("reverse-order")
-        set.parent("reverse-order")
+        setDiv.parent("reverse-order")
      
   });
   };
