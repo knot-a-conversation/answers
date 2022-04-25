@@ -4,10 +4,10 @@ html, body {
 }
 
 #dblist {
-  width: 65%; /* Full width (cover the whole page) */
+  /* width: 65%; Full width (cover the whole page) */
   height: 100%;
  
-  margin: 2em;
+  margin: 5em;
  
 }
 #dblist > h2{
@@ -74,4 +74,17 @@ h3{
   font-size: small;
   font-family: 'Roboto',sans-serif;
   font-weight: bold;
+}
+
+.qdiv{
+  font-family: 'Roboto',sans-serif;
+  font-size: 14px;
+}
+
+#questions-GPT{
+  padding: 2.5rem 2.5rem 0.5rem 2.5rem;
+}
+
+#questiongroup{
+  padding: 0 2.5rem 0.5rem 2.5rem;
 }
